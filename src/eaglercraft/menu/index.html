@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordan's Math Work | Eaglercraft</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    select#eagselect {
+      background-color: var(--surface);
+      color: var(--txtcolor);
+      border: 1px solid #555;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    select#eagselect option {
+      background-color: #111;
+      color: var(--txtcolor);
+    }
+  </style>
+  <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body theme="classic">
+  <div align="center">
+    <h1>Eaglercraft Launcher</h1>
+    <select id="eagselect" style="width: 400px;">
+      <option value="select" default>select</option>
+      <option value="regular">Regular [High Performance] [1.8.8 wasm]</option>
+      <option value="133">Eagler-craft 1.3.3</option>
+      <option value="152">Eagler-craft 1.5.2</option>
+      <option value="188javascript">Eagler-craft 1.8.8 [javascript]</option>
+      <option value="189">Eagler-craft 1.8.9</option>
+      <option value="1122javascript">Eagler-craft 1.12.2 [Javascript]</option>
+      <option value="1122wasm">Eaglercraft 1.12.2 [High-Performance] [WASM]</option>
+      <option value="astraclient">Astra Client [v1.5.0]</option>
+      <option value="resentclient">Resent Client [4.0]</option>
+    </select>
+    <button onclick="launchFromButton()">launch client</button>
+</body>
+
+<script>
+  function launch(v) {
+    if (!v || v === "select") return alert("Select a version");
+    let url;
+    if (v === "regular") url = "/yalp/src/eaglercraft/188/wasm/index.html";
+    if (v === "133") url = "/yalp/src/eaglercraft/133/index.html";
+    if (v === "152") url = "/yalp/src/eaglercraft/152/index.html";
+    if (v === "188javascript") url = "/yalp/src/eaglercraft/188/js/index.html";
+    if (v === "189") url = "/yalp/src/eaglercraft/189/index.html";
+    if (v === "1122javascript") url = "/yalp/src/eaglercraft/1122/js/index.html";
+    if (v === "1122wasm") url = "/yalp/src/eaglercraft/1122/wasm/index.html";
+    if (v === "astraclient") url = "/yalp/src/eaglercraft/astraclient/index.html";
+    if (v === "resentclient") url = "/yalp/src/eaglercraft/resentclient/index.html";
+    if (url) window.location.href = url;
+  }
+
+  function launchFromButton() {
+    launch(document.getElementById("eagselect").value);
+  }
+</script>
+</html>
